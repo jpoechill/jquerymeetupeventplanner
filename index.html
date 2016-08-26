@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meet-Up Event Planner</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <script type="text/javascript">
+       // $(function(){ // I use jQuery in this example
+       //      document.getElementById('newEventLink').onclick =
+       //         function () {
+
+       //          console.log('Hi');
+       //          $("#createEvent").show();
+       //          $("#newUser").hide();
+       //          $("#newEventLink").css(cssUnderlineLink);
+       //          $("#newUserLink").css(cssNoUnderlineLink);
+       //          // $("#newUserLink").removeAttr("style");
+       //        };
+       //      document.getElementById('newUserLink').onclick =
+       //         function () {
+       //          $("#createEvent").hide();
+       //          $("#newUser").show();
+       //          $("#newUserLink").css(cssUnderlineLink);
+       //          $("#newEventLink").css(cssNoUnderlineLink);
+       //          // $("#newEventLink").removeAttr("style");
+       //        };
+
+       //      var cssUnderlineLink = {"border-bottom": "2px solid lightblue", "padding-bottom": "4px", "margin-right": "8px", "font-weight": "bold"};
+       //      var cssNoUnderlineLink = {"border-bottom": "", "padding-bottom": "4px", "margin-right": "8px", "font-weight": ""};
+       //           // style="border-bottom: 2px solid grey; padding-bottom: 4px; margin-right: 8px;"
+
+       //      $("#newUserLink").css(cssUnderlineLink);
+       //      $("#createEvent").hide();
+       //      // console.log("Hello, world");
+       // });
+    </script>
+    <!-- Styles CSS -->
+    <!-- <link href="css/styles.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/starter-template.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Date-time-picker jQuery -->
+    <link href="js/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet">
+    <script src="js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+
+    <!-- ... -->
+    <!-- <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" /> -->
+</head>
+<body>
+
+<!--     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>/.nav-collapse
+      </div>
+    </nav> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="starter-template">
+          <h1>Meet-Up Event Planner</h1>
+          <p class="lead"><!-- Welcome to the Meet-Up Event Planner.  -->Use this page to create a <strong>new user</strong>, or <strong>new event</strong>.</p>
+          <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <p style="text-align: left; font-size: 18px;">
+                <span id="newUserLink">New User</span><!-- <span id="newEventLink">New Event</span> --></p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 0px;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div id="newUser">
+              <form>
+              <div class="form-group">
+                <label for="exampleInputName">FULL NAME</label>
+                <input type="email" class="form-control" id="exampleInputName" placeholder="Sebastian Thrun" required autofocus autocomplete="fname">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">EMAIL ADDRESS</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="seb.thrun@udacity.com">
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="exampleInputPassword1">PASSWORD</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword2">CONFIRM PASSWORD</label>
+              <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password">
+            </div>
+            <div class="checkbox">
+              <label for="exampleInputSubscribe" style="font-size: 12px;"><input id="exampleInputSubscribe" type="checkbox">Subscribe to monthly newsletter</label>
+            </div>
+            <div class="buttonHolder">
+              <button type="button" class="btn btn-primary" id="createUser" style="width: 100%; margin-bottom: 10px; margin-top: 10px;">Create User</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <p style="text-align: left; font-size: 18px;">
+                <span id="newUserLink">New Event</span><!-- <span id="newEventLink">New Event</span> --></p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 0px;">
+        <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12" id="createEvent">
+            <!-- <p style="text-align: center;">Create a New Event</p> -->
+              <form>
+            <div class="form-group col-lg-12">
+              <label for="exampleInputEventName">EVENT NAME</label>
+              <input type="email" class="form-control" id="exampleInputEventName" placeholder="Evening Party">
+            </div>
+            <div class="form-group col-lg-12">
+              <label for="exampleInputEventType">EVENT TYPE</label>
+                <select class="form-control" id="exampleInputEventType">
+                  <option>Socializing</option>
+                  <option>Get-Together</option>
+                  <option>BBQ</option>
+                  <option>Party</option>
+                </select>
+            </div>
+            <!-- <div class="form-group"> -->
+              <!-- <label for="exampleInputEmail1">DATALIST - EVENT TYPE</label> -->
+              <!-- <input list="nanodegrees">
+              <datalist id="nanodegrees">
+                <option value="Android"></option>
+                <option value="Data Analyst"></option>
+                <option value="Front End"></option>
+                <option value="Full Stack"></option>
+                <option value="Intro to Programming"></option>
+                <option value="iOS"></option>
+                <option value="Tech Entreprenuer"></option>
+              </datalist>
+            </div> -->
+            <div class="form-group col-lg-12">
+              <label for="exampleInputEventHost">EVENT HOST</label>
+                <select class="form-control" id="exampleInputEventHost">
+                  <option>Sebastian Thrun</option>
+                  <option>Walter</option>
+                  <option>Cameron</option>
+                  <option>Julia</option>
+                </select>
+            </div>
+
+
+            <form action="" class="form-inline">
+              <!-- <div class="form-group">
+                <div class="input-group">
+                  <label for="exampleInputEventStart">START DATE & TIME</label> -->
+                  <!-- <input type="time" class="form-control" id="exampleInputEventStart" placeholder="10/01/16"> -->
+                  <!-- <input style="display: inline;" type="text" class="form-control" placeholder="00/01/16">
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div> -->
+              <div class="form-group col-lg-6">
+                <label for="exampleInputEventStart">START DATE & TIME</label>
+                <div class="input-group" id='datetimepicker1'>
+                  <input style="display: inline;" id="datetimepicker" type="text" class="form-control" placeholder="00/01/16">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="form-group col-lg-6">
+                <label for="exampleInputEventEnd">END DATE & TIME</label>
+                <!-- <input type="time" class="form-control" id="datetimepicker2" placeholder="10/01/16"> -->
+                <div class="input-group" id='datetimepicker2'>
+                  <input style="display: inline;" id="datetimepicker123" type="text" class="form-control" placeholder="00/01/16">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+              <script  type="text/javascript">
+                $.datetimepicker.setLocale('en');
+                  $.datetimepicker.setLocale('en');
+                  $('#datetimepicker').datetimepicker();
+                  $('#datetimepicker123').datetimepicker();
+              </script>
+              <!-- <script  type="text/javascript">
+                $.datetimepicker.setLocale('en');
+                $('#datetimepicker1').datetimepicker();
+              </script> -->
+              </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group col-lg-12">
+              <label for="exampleInputGuestList">GUEST LIST</label>
+              <input type="email" class="form-control" id="exampleInputGuestList" placeholder="Todd, Joey, Marshall, Jennifer">
+            </div>
+            <div class="form-group col-lg-12">
+              <label for="exampleInputLocation">LOCATION</label>
+              <select class="form-control" id="exampleInputLocation">
+                  <option>Udacity HQ</option>
+                  <option>The Metreon</option>
+                  <option>SFMOMA</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-12">
+              <label for="exampleInputMessage">MESSAGE (OPTIONAL)</label>
+              <input type="email" class="form-control" id="exampleInputMessage" placeholder="Feel free to bring snacks or your favorite drink...">
+            </div>
+            <div class="buttonHolder col-lg-12">
+              <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">Create Event</button>
+            </div>
+            </form>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" style="margin-bottom: 20px;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <p style="text-align: left; font-size: 18px;">
+              <span id="newUserLink">All Events</span><!-- <span id="newEventLink">New Event</span> --></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--         <div class="container" style="margin-bottom: 20px;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <div class="form-group">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type='text' id="datetimepicker" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <script  type="text/javascript">
+                      $.datetimepicker.setLocale('en');
+                      $('#datetimepicker').datetimepicker();
+                    </script> -->
+                    <!-- <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script> -->
+<!--                 </div>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <div class="container" style="margin-bottom: 20px;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            From <span style="color: white;">10/01/16 8:00pm</span> to <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Todd</a>, <a href="#">Joey</a>, <a href="#">Marshall</a>, <a href="#">Jennifer</a></p>
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+            <span class="h4">Evening Party</span> <span class="h5">Social Event</span>
+            <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
+            Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

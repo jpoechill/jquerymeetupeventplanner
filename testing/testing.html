@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCF Testing</title>
+</head>
+<body>
+<input list="eventtype">
+<datalist id="eventtype">
+    <option value="Party"></option>
+    <option value="Meeting"></option>
+    <option value="Conference Talk"></option>
+    <option value="Sports Game"></option>
+</datalist> <br>
+
+<label for="billing">
+<span>Same as billing address</span>
+</label>
+<input id="billing" type="checkbox">
+
+<br>
+<label for="telephonenumber">
+<span>Telephone Number</span>
+<input id="telephonenumber" type="tel">
+</label> <br>
+
+<label for="fc">Full calendar and time</label>
+<input type="datetime-local" id="fc" name="cal"> <br>
+
+<label for="email">
+<span>Email:</span>
+<input type="email" id="email" autocomplete="email" placeholder="example@udacity.com">
+</label> <br>
+
+<input type="text" autofocus="">
+
+
+<h1>Gradebook</h1>
+<p>All grade values are 0, 10, 20, 30, ... 100. Use the average as a guide for issuing a letter grade.</p>
+<form action="#" id="grading">
+    <table>
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td colspan="2"><input id="email" type="email" placeholder="student@example.com" required></td>
+        </tr>
+        <tr>
+            <td><label for="quiz1">Quiz 1:</label></td>
+            <td><input type="number" id="quiz1" min="0" step="10" value="0" required></td>
+            <td>(needs max)</td>
+        </tr>
+        <tr>
+            <td><label for="quiz2">Quiz 2:</label></td>
+            <td><input type="number" id="quiz2" max="100" step="10" value="0" required></td>
+            <td>(needs min)</td>
+        </tr>
+        <tr>
+            <td><label for="quiz3">Quiz 3:</label></td>
+            <td><input type="number" id="quiz3" step="10" value="0" required></td>
+            <td>(needs min and max)</td>
+        </tr>
+        <tr>
+            <td><label for="quiz4">Quiz 4:</label></td>
+            <td><input type="number" id="quiz4" value="0" required></td>
+            <td>(needs min, max, and step)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Average: <output id="average">__</output></td>
+            <td><button id="calculate" type="button">Calculate</button></td>
+        </tr>
+        <tr>
+            <td><label for="grade">Grade:</label></td>
+            <td><input type="text" id="grade" size="2" minlength="1" maxlength="2" required></td>
+            <td>(Extra credit: use "pattern" to check for A, A-, B, B+, B-, down to F.)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan=2><input type="submit"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
