@@ -1,12 +1,23 @@
-var gulp = require('gulp');
-
-gulp.task('default', function () {
-    // Do soemthing here
-    console.log('Hello from Gulpfile.js!')
-});
-
-var browserSync = require('browser-sync').create();
-browserSync.init({
-    server: "./"
-});
-browserSync.stream();
+{
+  "name": "meetupeventplanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpoechill/meet-upeventplanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpoechill/meet-upeventplanner/issues"
+  },
+  "homepage": "https://github.com/jpoechill/meet-upeventplanner#readme"
+}
