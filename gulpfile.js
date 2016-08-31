@@ -1,12 +1,20 @@
 var gulp = require('gulp');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('default', function () {
-    // Do soemthing here
-    console.log('Hello from Gulpfile.js!')
+    // Do something here
+    console.log('Hello from Gulpfile.js!');
 });
 
-var browserSync = require('browser-sync').create();
-browserSync.init({
-    server: "./"
+gulp.task('sass', function () {
+ gulp.src('sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
 });
-browserSync.stream();
+
+// gulp.task('sass', function() {
+//     gulp.src('sass/**/*.scss')
+//         .pipe(sass().on('error', sass.logError))
+//         .pipe(gulp.dest('./css'));
+// });

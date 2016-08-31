@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Meet-Up Event Planner</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/starter-template.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Bootstrap Validator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+
+    <!-- Date-time-picker jQuery -->
+    <link href="js/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet">
+    <script src="js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+
+    <!-- Google Maps Autocomplete for Addresses API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places"></script>
+</head>
+<body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="starter-template">
+          <h1>Meet-Up Event Planner</h1>
+          <p class="lead">Use this page to create a <strong>new user</strong>, or <strong>new event</strong>.</p>
+          <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 0px;">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-12" id="createEvent">
+              <form>
+            <div class="form-group">
+              <label for="exampleInputEventName">LOCATION</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                </span>
+                <!-- <input type="text" class="form-control" id="autocomplete" autocomplete="off" onfocus="geolocate()" placeholder="Where is the event?"> -->
+              </div>
+            </div>
+          </div>
+            <div class="col-md-12" id="createEvent">
+            <div class="form-group">
+            <div class="buttonHolder">
+              <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" onclick="alert('Validate new event alert here.')">Create Event</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="exampleInputLocation">LOCATION</label>
+              <select class="selectpicker" data-width="100%" id="exampleInputLocation">
+                <option data-icon="glyphicon-map-marker">Udacity HQ</option>
+                <option>The Metreon</option>
+                <option>SFMOMA</option>
+              </select>
+            </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/i18n/defaults-*.min.js"></script>
+</body>
+</html>

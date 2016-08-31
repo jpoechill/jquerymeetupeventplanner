@@ -46,109 +46,82 @@
           </div>
         </div>
     </div>
-
     <div class="container" style="margin-bottom: 0px;">
       <div class="row">
+        <form role="form" data-toggle="validator" >
         <div class="col-md-6">
           <div class="col-md-12" id="newUser">
-              <form>
-              <div class="form-group col-lg-12">
+              <div class="form-group">
                 <label for="exampleInputName">FULL NAME</label>
                 <div class="input-group">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-user"></span>
                   </span>
-                  <input type="email" class="form-control" id="exampleInputName" placeholder="What's your name?" required autofocus autocomplete="fname">
+                  <input type="name" class="form-control" id="exampleInputName" placeholder="What's your name?" required autofocus autocomplete="fname" data-required-error="Full name required" >
                 </div>
-                <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+                <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group col-lg-12">
+              <div class="form-group ">
                 <label for="exampleInputPassword1">PASSWORD</label>
                 <div class="input-group">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-lock"></span>
                   </span>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your password">
+                  <input type="password" data-minlength="6" class="form-control" id="exampleInputPassword1" data-required-error="Password required" placeholder="Your password" required>
                 </div>
-              <!-- <div class="help-block with-errors">Must be at least 8 characters, contain both lowercase and uppercase letters, a number, and punctuation.</div> -->
+              <div class="help-block with-errors">Must be at least 6 characters.</div>
               </div>
-              <div class="form-group col-lg-12">
+              <div class="form-group ">
                 <label for="exampleInputPassword2">CONFIRM PASSWORD</label>
                 <div class="input-group">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-lock"></span>
                   </span>
-                  <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Your confirmation">
+                  <input type="password" class="form-control" id="exampleInputConfirmPassword2" data-match="#exampleInputPassword1"  data-match-error="Passwords do not match" data-required-error="Confirmation required" placeholder="Your confirmation" required>
                 </div>
-                                <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+                <div class="help-block with-errors"></div>
               </div>
-<!--               <div class="checkbox col-lg-12">
-                <label for="exampleInputSubscribe" style="font-size: 12px;"><input id="exampleInputSubscribe" type="checkbox">Subscribe to monthly newsletter</label>
-              </div> -->
+            <div class="form-group">
+              <div class="buttonHolder">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" >Create Event</button>
+              </div>
+            </div>
           </div>
         </div>
-
         <div class="col-md-6">
           <div class="col-md-12">
-            <div class="form-group col-lg-12">
+            <div class="form-group ">
               <label for="exampleInputEmail1">EMAIL ADDRESS</label>
               <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-envelope"></span>
                 </span>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="What's your email?" required>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="What's your email?" data-error="Please enter a valid email address" required>
               </div>
-              <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+              <div class="help-block with-errors"></div>
             </div>
-            </form>
-            <div class="form-group col-lg-12">
+            <div class="form-group">
               <label for="exampleInputPassword1">EMPLOYER (OPTIONAL)</label>
               <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-briefcase"></span>
                 </span>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Who do you work for?">
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Who do you work for?">
               </div>
-              <!-- <div class="help-block with-errors">Must be at least 8 characters, contain both lowercase and uppercase letters, a number, and punctuation.</div> -->
             </div>
-            <div class="form-group col-lg-12">
+            <div class="form-group">
               <label for="exampleInputPassword2">JOB TITLE (OPTIONAL)</label>
               <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-folder-open"></span>
                 </span>
-                <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="What do you do?">
+                <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="What do you do?">
               </div>
-              <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
             </div>
-            </form>
           </div>
         </div>
-
+        </form>
       </div>
-<!--       <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <div class="form-group col-lg-12" style="margin-bottom: 10px; padding-bottom: 0px;">
-              OPTIONAL
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div class="row" style="margin-top: 0px;">
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <div class="buttonHolder col-lg-12">
-              <button type="button" class="btn btn-primary" id="createUser" style="width: 100%; margin-bottom: 10px; margin-top: 10px;" onclick="alert('Validate new user alert here.')">Create User</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="col-md-12">
-          </div>
-        </div>
-      </div>
-
       <div class="row">
         <div class="col-md-12">
           <hr>
@@ -167,106 +140,103 @@
       </div>
     </div>
 
+    <form role="form" data-toggle="validator">
     <div class="container" style="margin-bottom: 0px;">
-        <div class="row">
+      <div class="row">
         <div class="col-md-6">
           <div class="col-md-12" id="createEvent">
-              <form>
-            <div class="form-group col-lg-12">
+            <div class="form-group">
               <label for="exampleInputEventName">EVENT NAME</label>
               <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-pushpin"></span>
                 </span>
-                <input type="email" class="form-control" id="exampleInputEventName" placeholder="What is the event?">
+                <input type="text" class="form-control" id="exampleInputEventName" placeholder="What is the event?" data-required-error="Event name required" required>
               </div>
-              <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+              <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group  col-lg-6">
+          </div>
+            <div class="form-group col-md-6">
               <label for="exampleInputEventType">EVENT TYPE</label>
-                <select class="form-control" id="exampleInputEventType">
+                <select  class="form-control" data-width="100%" id="exampleInputEventType" required>
                   <option>Socializing</option>
                   <option>Get-Together</option>
                   <option>Party</option>
                 </select>
-              <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
             </div>
-            <div class="form-group  col-lg-6">
+            <div class="help-block with-errors"></div>
+            <div class="form-group col-md-6">
               <label for="exampleInputEventHost">EVENT HOST</label>
-                <select class="form-control" id="exampleInputEventHost">
-                  <option>Sebastian Thrun</option>
-                  <option>Walter</option>
+                <select class="form-control" id="exampleInputEventHost" required>
                   <option>Cameron</option>
+                  <option>Sebastian</option>
+                  <option>Walter</option>
                   <option>Julia</option>
                 </select>
-                <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
             </div>
+            <div class="help-block with-errors"></div>
 
-            <form action="" class="form-inline">
-              <div class="form-group col-lg-6">
+              <div class="form-group col-md-6">
                 <label for="exampleInputEventStart">START DATE & TIME</label>
                 <div class="input-group" id='datetimepicker1'>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
-                  <input style="display: inline;" id="datetimepicker" type="text" class="form-control" placeholder="00/01/16">
+                  <input style="display: inline;" id="datetimepicker" type="text" class="form-control" placeholder="00/01/16" data-required-error="Start date required" required>
                 </div>
-                <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+                <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group col-lg-6">
+              <div class="form-group col-md-6">
                 <label for="exampleInputEventEnd">END DATE & TIME</label>
                 <div class="input-group" id='datetimepicker2'>
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
-                  <input style="display: inline;" id="datetimepicker123" type="text" class="form-control" placeholder="00/01/16">
+                  <input style="display: inline;" id="datetimepicker123" type="text" class="form-control" placeholder="00/01/16" data-required-error="End date required" required>
                 </div>
-                <!-- <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+                <div class="help-block with-errors"></div>
               </div>
               <script type="text/javascript">
                 $.datetimepicker.setLocale('en');
                 $('#datetimepicker').datetimepicker();
                 $('#datetimepicker123').datetimepicker();
               </script>
-              </form>
-
-            <div class="buttonHolder col-lg-12">
-              <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" onclick="alert('Validate new event alert here.')">Create Event</button>
+            <div class="col-md-12" id="createEvent">
+              <div class="form-group">
+                <div class="buttonHolder">
+                  <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;"">Create Event</button>
+                </div>
+              </div>
             </div>
-          </div>
-
         </div>
         <div class="col-md-6">
           <div class="col-md-12">
-
-            <div class="form-group col-lg-12">
-
+            <div class="form-group">
               <label for="exampleInputLocation">LOCATION</label>
-
-              <select class="form-control" id="exampleInputLocation">
-                <option>Udacity HQ</option>
-                <option>The Metreon</option>
-                <option>SFMOMA</option>
-              </select>
-
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                </span>
+                <input type="text" class="form-control" id="autocomplete" autocomplete="off" onfocus="geolocate()" placeholder="Where is the event?" data-required-error="Location required" data-error="Event location required" required>
+                <!-- <input type="text" class="form-control" id="exampleInputEventName" placeholder="What is the event?" data-required-error="Event name required" required> -->
+              </div>
+              <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-lg-12">
+            <div class="form-group ">
               <label for="exampleInputMessage">MESSAGE (OPTIONAL)</label>
-              <textarea class="form-control" rows="5" placeholder="Feel free to bring snacks or your favorite drink..."></textarea>
+              <textarea class="form-control" rows="5" placeholder="What should everyone bring?"></textarea>
               </textarea><!--
               <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
             </div>
-            </form>
-            </form>
           </div>
         </div>
-      </div>
-      <div class="row">
+        <div class="row">
         <div class="col-md-12">
           <hr>
         </div>
       </div>
     </div>
+    </form>
 
     <div class="container" style="margin-bottom: 20px;">
       <div class="row">
@@ -283,8 +253,8 @@
       <div class="row">
         <div class="col-md-6">
           <div class="col-md-12">
-            <div class="col-lg-12" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
-              <span class="h4">Evening Party</span> <span class="h5">- Social</span>
+            <div class="" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+              <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
               <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
               Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
             </div>
@@ -292,8 +262,8 @@
         </div>
         <div class="col-md-6">
           <div class="col-md-12">
-            <div class="col-lg-12" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
-              <span class="h4">Evening Party</span> <span class="h5">- Social</span>
+            <div class="" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
+              <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
               <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
               Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
             </div>
@@ -301,6 +271,62 @@
         </div>
       </div>
     </div>
-  </div>
+
+<!-- Google Maps Autocomplete for Addresses JS Scripting -->
+<script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        // autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+
+<!-- Google Maps Autocomplete for Addresses API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places&callback=initAutocomplete"
+        async defer></script>
+
+<!-- jQuery, Bootsrap CDN -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
 </body>
 </html>
