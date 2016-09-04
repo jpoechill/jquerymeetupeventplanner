@@ -212,7 +212,7 @@
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
-              <input type="text" id="endDateAndTime" class="form-control" placeholder="01/01/10, 10:09am" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be higher than first">
+              <input type="datetime-local" id="endDateAndTime" class="form-control" placeholder="01/01/10, 10:09am" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be higher than first">
             </div>
             <div class="help-block with-errors"></div>
           </div>
@@ -289,7 +289,7 @@
         <div class="col-md-12">
           <div class="events-box">
             <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
-            <p class="dark-grey">Hosted by <strong><span class="color-white">Sebastian Thrun</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
+            <p class="dark-grey">Hosted by <strong><span class="color-white">Cameron</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
             Starts <span class="color-white">10/01/16 8:00pm</span> – Ends <span class="color-white">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
           </div>
         </div>
@@ -300,7 +300,7 @@
         <div class="col-md-12">
           <div class="events-box">
             <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
-            <p class="dark-grey">Hosted by <strong><span class="color-white">Sebastian Thrun</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
+            <p class="dark-grey">Hosted by <strong><span class="color-white">Cameron</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
             Starts <span class="color-white">10/01/16 8:00pm</span> – Ends <span class="color-white">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
           </div>
         </div>
@@ -353,6 +353,7 @@ function geolocate() {
 
 <!-- JS Scripts -->
 <script src="dist/scripts/scripts.min.js"></script>
+<!-- <script src="js/scripts.js"></script> -->
 
 <!-- Styles CSS -->
 <link rel="stylesheet" href="css/styles.css">
@@ -375,10 +376,12 @@ $('#myForm2').validator({
           var firstDateVal = $('#startDateAndTime').val();
           var secondDateVal = $el.val();
 
-          if (checkDates(firstDateVal, secondDateVal) == true) {
-            return false;
-          } else {
-            return true;
+          if (firstDateVal !== "" && secondDateVal !== "") {
+            if (checkDates(firstDateVal, secondDateVal) == true) {
+              return false;
+            } else {
+              return true;
+            }
           }
         }
     }
