@@ -6,328 +6,393 @@
     <title>Meet-Up Event Planner</title>
 
     <!-- jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 
-    <!-- Styles CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/starter-template.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-    <!-- Bootstrap Validator -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-
-    <!-- Date-time-picker jQuery -->
-    <link href="js/datetimepicker-master/build/jquery.datetimepicker.min.css" rel="stylesheet">
-    <script src="js/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        <div class="starter-template">
-          <h1>Meet-Up Event Planner</h1>
-          <p class="lead">Use this page to create a <strong>new user</strong>, or <strong>new event</strong>.</p>
-          <hr>
-          </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <div class="starter-template">
+      <h1>Meet-Up Event Planner</h1>
+      <p class="lead">Use this page to create a <strong>new user</strong>, or <strong>new event</strong>.</p>
+      <hr>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="container" style="margin-bottom: 20px;">
+<div class="container small-margin">
+    <div class="row">
+      <div class="col-md-6">
         <div class="row">
-          <div class="col-md-6">
-            <div class="col-md-12">
-              <p style="text-align: left; font-size: 18px;">
-                <span id="newUserLink">New User</span></p>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="container" style="margin-bottom: 0px;">
-      <div class="row">
-        <form role="form" data-toggle="validator" >
-        <div class="col-md-6">
-          <div class="col-md-12" id="newUser">
-              <div class="form-group">
-                <label for="exampleInputName">FULL NAME</label>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-user"></span>
-                  </span>
-                  <input type="name" class="form-control" id="exampleInputName" placeholder="What's your name?" required autofocus autocomplete="fname" data-required-error="Full name required" >
-                </div>
-                <div class="help-block with-errors"></div>
-              </div>
-              <div class="form-group ">
-                <label for="exampleInputPassword1">PASSWORD</label>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-lock"></span>
-                  </span>
-                  <input type="password" data-minlength="6" class="form-control" id="exampleInputPassword1" data-required-error="Password required" placeholder="Your password" required>
-                </div>
-              <div class="help-block with-errors">Must be at least 6 characters.</div>
-              </div>
-              <div class="form-group ">
-                <label for="exampleInputPassword2">CONFIRM PASSWORD</label>
-                <div class="input-group">
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-lock"></span>
-                  </span>
-                  <input type="password" class="form-control" id="exampleInputConfirmPassword2" data-match="#exampleInputPassword1"  data-match-error="Passwords do not match" data-required-error="Confirmation required" placeholder="Your confirmation" required>
-                </div>
-                <div class="help-block with-errors"></div>
-              </div>
-            <div class="form-group">
-              <div class="buttonHolder">
-                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" >Create Event</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
           <div class="col-md-12">
-            <div class="form-group ">
-              <label for="exampleInputEmail1">EMAIL ADDRESS</label>
+            <p class="small-left-margin">
+              <span id="newUserHeader">New User</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<form id="myForm1">
+<div class="container no-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12" id="newUser">
+            <div class="form-group">
+              <label for="newUserFullName">FULL NAME</label>
               <div class="input-group">
                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-envelope"></span>
+                    <span class="glyphicon glyphicon-user"></span>
                 </span>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="What's your email?" data-error="Please enter a valid email address" required>
+                <input type="name" class="form-control" id="newUserFullName" placeholder="What's your name?" required autofocus autocomplete="fname" data-required-error="Full name required" >
               </div>
               <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">EMPLOYER (OPTIONAL)</label>
+            <div class="form-group ">
+              <label for="newUserPassword">PASSWORD</label>
               <div class="input-group">
                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-briefcase"></span>
+                    <span class="glyphicon glyphicon-lock"></span>
                 </span>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Who do you work for?">
+                <input type="password" data-minlength="6" class="form-control" id="newUserPassword" data-required-error="Password required" placeholder="Your password" required>
               </div>
+            <div class="help-block with-errors">Must be at least 6 characters.</div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword2">JOB TITLE (OPTIONAL)</label>
+            <div class="form-group ">
+              <label for="newUserPasswordConfirm">CONFIRM PASSWORD</label>
               <div class="input-group">
                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-folder-open"></span>
+                    <span class="glyphicon glyphicon-lock"></span>
                 </span>
-                <input type="text" class="form-control" id="exampleInputConfirmPassword2" placeholder="What do you do?">
+                <input type="password" class="form-control" id="newUserPasswordConfirm" data-match="#newUserPassword"  data-match-error="Passwords do not match" data-required-error="Confirmation required" placeholder="Your confirmation" required>
               </div>
+              <div class="help-block with-errors"></div>
             </div>
-          </div>
         </div>
-        </form>
       </div>
+    </div>
+    <div class="col-md-6">
       <div class="row">
         <div class="col-md-12">
-          <hr>
-        </div>
-      </div>
-    </div>
-
-    <div class="container" style="margin-bottom: 20px;">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <p style="text-align: left; font-size: 18px;">
-              <span id="newUserLink">New Event</span></p>
+          <div class="form-group ">
+            <label for="newUserEmailAddress">EMAIL ADDRESS</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-envelope"></span>
+              </span>
+              <input type="email" class="form-control" id="newUserEmailAddress" placeholder="What's your email?" data-error="Please enter a valid email address" required>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group">
+            <label for="newUserEmployer">EMPLOYER (OPTIONAL)</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-briefcase"></span>
+              </span>
+              <input type="text" class="form-control" id="newUserEmployer" placeholder="Who do you work for?">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newUserJobTitle">JOB TITLE (OPTIONAL)</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-folder-open"></span>
+              </span>
+              <input type="text" class="form-control" id="newUserJobTitle" placeholder="What do you do?">
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <form role="form" data-toggle="validator">
-    <div class="container" style="margin-bottom: 0px;">
+  </div>
+  <div class="row">
+    <div class="col-md-6">
       <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-12" id="createEvent">
-            <div class="form-group">
-              <label for="exampleInputEventName">EVENT NAME</label>
-              <div class="input-group">
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-pushpin"></span>
-                </span>
-                <input type="text" class="form-control" id="exampleInputEventName" placeholder="What is the event?" data-required-error="Event name required" required>
-              </div>
-              <div class="help-block with-errors"></div>
+        <div class="col-md-12" id="newUser">
+          <div class="form-group">
+            <div class="buttonHolder">
+              <button type="submit" class="btn btn-primary submit-btn" disabled>Create User</button>
             </div>
           </div>
-            <div class="form-group col-md-6">
-              <label for="exampleInputEventType">EVENT TYPE</label>
-                <select  class="form-control" data-width="100%" id="exampleInputEventType" required>
-                  <option>Socializing</option>
-                  <option>Get-Together</option>
-                  <option>Party</option>
-                </select>
-            </div>
-            <div class="help-block with-errors"></div>
-            <div class="form-group col-md-6">
-              <label for="exampleInputEventHost">EVENT HOST</label>
-                <select class="form-control" id="exampleInputEventHost" required>
-                  <option>Cameron</option>
-                  <option>Sebastian</option>
-                  <option>Walter</option>
-                  <option>Julia</option>
-                </select>
-            </div>
-            <div class="help-block with-errors"></div>
-
-              <div class="form-group col-md-6">
-                <label for="exampleInputEventStart">START DATE & TIME</label>
-                <div class="input-group" id='datetimepicker1'>
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                  <input style="display: inline;" id="datetimepicker" type="text" class="form-control" placeholder="00/01/16" data-required-error="Start date required" required>
-                </div>
-                <div class="help-block with-errors"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="exampleInputEventEnd">END DATE & TIME</label>
-                <div class="input-group" id='datetimepicker2'>
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                  <input style="display: inline;" id="datetimepicker123" type="text" class="form-control" placeholder="00/01/16" data-required-error="End date required" required>
-                </div>
-                <div class="help-block with-errors"></div>
-              </div>
-              <script type="text/javascript">
-                $.datetimepicker.setLocale('en');
-                $('#datetimepicker').datetimepicker();
-                $('#datetimepicker123').datetimepicker();
-              </script>
-            <div class="col-md-12" id="createEvent">
-              <div class="form-group">
-                <div class="buttonHolder">
-                  <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px; margin-bottom: 10px;"">Create Event</button>
-                </div>
-              </div>
-            </div>
         </div>
-        <div class="col-md-6">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+</div>
+</form>
+
+<div class="container small-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="small-left-margin">
+            <span id="newEventHeader">New Event</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="myForm2">
+<div class="container no-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12" id="createEvent">
+          <div class="form-group">
+            <label for="newEventName">EVENT NAME</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-pushpin"></span>
+              </span>
+              <input type="text" class="form-control" id="newEventName" placeholder="What is the event?" data-required-error="Event name required" required>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+            <label for="newEventType">EVENT TYPE</label>
+            <div class="input-group" id='newEventType'>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-list-alt"></span>
+              </span>
+              <input list="newEventType" id="newEventType" type="text" class="form-control" placeholder="Socializing" data-required-error="Event type required" required>
+              <datalist id="newEventType">
+                <option value="Socializing">
+                <option value="Get-together">
+                <option value="Party">
+              </datalist>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="newEventHost">EVENT HOST</label>
+            <div class="input-group" id='newEventHost'>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+              </span>
+              <input list="newEventHost" id="newEventHost" type="text" class="form-control" placeholder="Cameron" data-required-error="Event host required" required>
+              <datalist id="newEventHost">
+                <option value="Cameron">
+                <option value="Walter">
+                <option value="Julia">
+                <option value="Sebastian">
+              </datalist>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="startDateAndTime">START DATE & TIME</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+              <input id="startDateAndTime" type="datetime-local" class="form-control" placeholder="01/01/10, 10:10am" data-required-error="Start date required" required>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="endDateAndTime">END DATE & TIME</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+              <input type="text" id="endDateAndTime" class="form-control" placeholder="01/01/10, 10:09am" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be higher than first">
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="exampleInputLocation">LOCATION</label>
+              <label for="autocomplete">LOCATION</label>
               <div class="input-group">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-map-marker"></span>
                 </span>
                 <input type="text" class="form-control" id="autocomplete" autocomplete="off" onfocus="geolocate()" placeholder="Where is the event?" data-required-error="Location required" data-error="Event location required" required>
-                <!-- <input type="text" class="form-control" id="exampleInputEventName" placeholder="What is the event?" data-required-error="Event name required" required> -->
+              </div>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <label for="newEventGuestList">GUEST LIST</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="fa fa-users"></span>
+                </span>
+                <input type="text" class="form-control" id="newEventGuestList" placeholder="Who's invited?" data-required-error="Guest list required" data-error="Guest list required" required>
               </div>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group ">
-              <label for="exampleInputMessage">MESSAGE (OPTIONAL)</label>
-              <textarea class="form-control" rows="5" placeholder="What should everyone bring?"></textarea>
-              </textarea><!--
-              <div class="help-block with-errors">Hey look, this one has feedback icons!</div> -->
+              <label for="newEventMessage">MESSAGE (OPTIONAL)</label>
+              <textarea class="form-control" rows="2" id="newEventMessage" placeholder="What should everyone bring?"></textarea>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <div class="row">
+          <div class="col-md-12" id="newUser">
+            <div class="form-group">
+              <div class="buttonHolder">
+                <button type="submit" class="btn btn-primary submit-btn">Create Event</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<div class="container small-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <p class="small-left-margin">
+          <span id="newUserLink">All Events</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container events-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
         <div class="col-md-12">
-          <hr>
+          <div class="events-box">
+            <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
+            <p class="dark-grey">Hosted by <strong><span class="color-white">Sebastian Thrun</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
+            Starts <span class="color-white">10/01/16 8:00pm</span> – Ends <span class="color-white">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
+          </div>
         </div>
       </div>
     </div>
-    </form>
-
-    <div class="container" style="margin-bottom: 20px;">
+    <div class="col-md-6">
       <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <p style="text-align: left; font-size: 18px;">
-              <span id="newUserLink">All Events</span></p>
+        <div class="col-md-12">
+          <div class="events-box">
+            <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
+            <p class="dark-grey">Hosted by <strong><span class="color-white">Sebastian Thrun</span></strong> at <strong><span class="color-white">Udacity HQ</span></strong><br>
+            Starts <span class="color-white">10/01/16 8:00pm</span> – Ends <span class="color-white">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container" style="margin-bottom: 50px;">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <div class="" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
-              <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
-              <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
-              Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="col-md-12">
-            <div class="" style="background: #000000; background: rgba(0, 0, 0, 0.4); padding: 15px; margin-bottom: 10px; border-radius: 8px;">
-              <span class="h4">Evening Party</span> <span class="h5">- Socializing</span>
-              <p style="color: darkgrey;">Hosted by <strong><span style="color: white;">Sebastian Thrun</span></strong> at <strong><span style="color: white;">Udacity HQ</span></strong><br>
-              Starts <span style="color: white;">10/01/16 8:00pm</span> – Ends <span style="color: white;">10/02/16 1:00am</span><br>Guest List: <a href="#">Jamie</a>, <a href="#">Jennifer</a>, <a href="#">Todd</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
 
 <!-- Google Maps Autocomplete for Addresses JS Scripting -->
 <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
+var placeSearch, autocomplete;
 
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
 
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        // autocomplete.addListener('place_changed', fillInAddress);
-      }
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  // autocomplete.addListener('place_changed', fillInAddress);
+}
 
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
-    </script>
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+</script>
+
+<!-- JS Scripts -->
+<script src="dist/scripts/scripts.min.js"></script>
+
+<!-- Styles CSS -->
+<link rel="stylesheet" href="css/styles.css">
 
 <!-- Google Maps Autocomplete for Addresses API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places&callback=initAutocomplete"
-        async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places&callback=initAutocomplete" async defer></script>
 
-<!-- jQuery, Bootsrap CDN -->
-<script src="https://code.jquery.com/jquery.min.js"></script>
+<!-- Bootsrap CDN -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap Validator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+<script>
+// Form validators
+$('#myForm1').validator();
+$('#myForm2').validator({
+    custom: {
+        'datechecker': function($el) {
+
+          var firstDateVal = $('#startDateAndTime').val();
+          var secondDateVal = $el.val();
+
+          if (checkDates(firstDateVal, secondDateVal) == true) {
+            return false;
+          } else {
+            return true;
+          }
+        }
+    }
+});
+</script>
+
+<!-- Font Awesome Icons -->
+<script src="https://use.fontawesome.com/d499a08083.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+
 </body>
 </html>
