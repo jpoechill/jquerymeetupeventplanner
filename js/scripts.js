@@ -7,7 +7,7 @@ $(function() {
 
   var hh = today.getHours();
   var mi = today.getMinutes();
-  var ampm = 'am';
+  var ampm = 'AM';
   var laterClock;
   var laterTime;
 
@@ -23,30 +23,32 @@ $(function() {
 
   if (hh > 12) {
     hh = hh - 12;
-    ampm = "pm";
+    ampm = "PM";
   }
 
   if (mi < 10) {
     mi = "0" + mi;
   }
 
-  myClock = hh + ":" + mi + ampm;
+  myClock = hh + ":" + mi + " " + ampm;
+
   hh += 2;
-  if (hh = 12) {
+
+  if (hh == 12) {
     ampm = "am";
   } else if (hh > 12) {
     hh =- 12;
-    ampm = "am";
+    ampm = "pm";
   }
 
-  laterClock = hh + ":" + mi + ampm;
+  laterClock = hh + ":" + mi + " " + ampm;
 
-  $('#startDateAndTime').attr("placeholder", today +  ", " + myClock);
-  $('#endDateAndTime').attr("placeholder", today +  ", " + laterClock);
+  $('#startDateAndTime').attr("placeholder", today +  " " + myClock);
+  $('#endDateAndTime').attr("placeholder", today +  " " + laterClock);
 
   function checkDates(firstDateTime, secondDateTime) {
     // Format first date
-    firstDateTime = firstDateTime.split(",");
+    firstDateTime = firstDateTime.split(" ");
     firstDate = firstDateTime[0];
     firstDate = firstDate.split("/");
     var firstDateMM = firstDate[0];
@@ -63,12 +65,12 @@ $(function() {
     firstTimeMM = parseInt(firstTimeMM.substring(0, firstTimeMM.length-2));
 
     // Parse first date's AM/PM and adjust
-    if (amPM == "pm") {
+    if (amPM == "PM") {
       firstTimeHH = parseInt(firstTimeHH) + 12;
     }
 
     // Format second date
-    secondDateTime = secondDateTime.split(",");
+    secondDateTime = secondDateTime.split(" ");
     secondDate = secondDateTime[0];
     secondDate = secondDate.split("/");
     var secondDateMM = secondDate[0];
@@ -120,7 +122,7 @@ $(function() {
 
 function checkDates(firstDateTime, secondDateTime) {
     // Format first date
-    firstDateTime = firstDateTime.split(",");
+    firstDateTime = firstDateTime.split(" ");
     firstDate = firstDateTime[0];
     firstDate = firstDate.split("/");
     var firstDateMM = firstDate[0];
@@ -129,20 +131,19 @@ function checkDates(firstDateTime, secondDateTime) {
 
     // Format time
     firstTime = firstDateTime[1];
-    firstTime = firstTime.replace(/\s+/g, '');
     firstTime = firstTime.split(":");
     var firstTimeHH = parseInt(firstTime[0]);
     var firstTimeMM = firstTime[1];
-    var amPM = firstTimeMM.slice(-2);
-    firstTimeMM = parseInt(firstTimeMM.substring(0, firstTimeMM.length-2));
+    firstTimeMM = parseInt(firstTimeMM.substring(0, firstTimeMM.length));
 
     // Parse first date's AM/PM and adjust
-    if (amPM == "pm") {
+    var amPM = firstDateTime[2];
+    if (amPM == "PM") {
       firstTimeHH = parseInt(firstTimeHH) + 12;
     }
 
     // Format second date
-    secondDateTime = secondDateTime.split(",");
+    secondDateTime = secondDateTime.split(" ");
     secondDate = secondDateTime[0];
     secondDate = secondDate.split("/");
     var secondDateMM = secondDate[0];
@@ -151,45 +152,40 @@ function checkDates(firstDateTime, secondDateTime) {
 
     // Format Time
     secondTime = secondDateTime[1];
-    secondTime = secondTime.replace(/\s+/g, '');
     secondTime = secondTime.split(":");
     var secondTimeHH = parseInt(secondTime[0]);
     var secondTimeMM = secondTime[1];
-    var secondTimeAmPM = secondTimeMM.slice(-2);
-    secondTimeMM = parseInt(secondTimeMM.substring(0, secondTimeMM.length-2));
+    secondTimeMM = parseInt(secondTimeMM.substring(0, secondTimeMM.length));
 
     // Parse second date's AM/PM and adjust
-    if (secondTimeAmPM == "pm") {
+
+    var secondTimeAmPM = secondDateTime[2];
+    if (secondTimeAmPM == "PM") {
       secondTimeHH = parseInt(secondTimeHH) + 12;
     }
 
     // Check year
     if (firstDateYY > secondDateYY) {
-      console.log("Trace year.");
       return false;
     }
 
     // Check month
     if (firstDateMM > secondDateMM) {
-      console.log("Trace month.");
       return false;
     }
 
     // Check day
     if (firstDateDD > secondDateDD) {
-      console.log("Trace day.");
       return false;
     }
 
     // Check hour
     if (firstTimeHH > secondTimeHH) {
-      console.log("Trace hour.");
       return false;
     }
 
     // Check min
     if (firstTimeMM > secondTimeMM) {
-      console.log("Trace minute.");
       return false;
     }
 

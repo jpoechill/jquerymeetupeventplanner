@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-uglifycss": "^1.0.6"
+  },
   "devDependencies": {
     "browser-sync": "^2.14.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0"

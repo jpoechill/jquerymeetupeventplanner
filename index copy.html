@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Meet-Up Event Planner</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container no-margin">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12" id="createEvent">
+          <div class="form-group">
+            <label for="newEventName">EVENT NAME</label>
+            <div class="input-group">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-pushpin"></span>
+              </span>
+              <input type="text" class="form-control" id="newEventName" placeholder="What is the event?" data-required-error="Event name required" required>
+            </div>
+            <div class="help-block with-errors"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="newEventType">EVENT TYPE</label>
+          <div class="input-group" id='newEventType'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </span>
+            <input list="newEventType" id="newEventType" type="text" class="form-control" placeholder="Socializing" data-required-error="Event type required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="newEventHost">EVENT HOST</label>
+          <div class="input-group" id='newEventHost'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input list="newEventHost" id="newEventHost" type="text" class="form-control" placeholder="Cameron" data-required-error="Event host required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="newEventType">EVENT TYPE</label>
+          <div class="input-group" id='newEventType'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </span>
+            <input id="startDateAndTime" type="datetime-local" class="form-control" data-required-error="Start date required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="newEventHost">EVENT HOST</label>
+          <div class="input-group" id='newEventHost'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input type="datetime-local" id="endDateAndTime" class="form-control" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be later than first">
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+        <div class="form-group col-md-6">
+          <label for="startDateAndTime">START DATE & TIME</label>
+          <div class="input-group" id='startDateAndTime'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input id="startDateAndTime" type="datetime-local" class="form-control" data-required-error="Start date required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="endDateAndTime">END DATE & TIME</label>
+          <div class="input-group" id='endDateAndTime'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input type="datetime-local" id="endDateAndTime" class="form-control" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be later than first">
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+<!-- Google Maps Autocomplete for Addresses JS Scripting -->
+<script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+var placeSearch, autocomplete;
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  // autocomplete.addListener('place_changed', fillInAddress);
+}
+
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+</script>
+
+<!-- JS Scripts -->
+<script src="dist/scripts/scripts.min.js"></script>
+
+<!-- Styles CSS -->
+<link rel="stylesheet" href="dist/css/bundle.min.css">
+
+<!-- Google Maps Autocomplete for Addresses API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places&callback=initAutocomplete" async defer></script>
+
+<!-- Bootsrap CDN -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<!-- Bootstrap Validator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+<script>
+// Form validators
+$('#myForm1').validator();
+$('#myForm2').validator({
+    custom: {
+        'datechecker': function($el) {
+
+          var firstDateVal = $('#startDateAndTime').val();
+          var secondDateVal = $el.val();
+
+          if (firstDateVal !== "" && secondDateVal !== "") {
+            if (checkDates(firstDateVal, secondDateVal) == true) {
+              return false;
+            } else {
+              return true;
+            }
+          }
+        }
+    }
+});
+</script>
+
+<!-- Font Awesome Icons -->
+<script src="https://use.fontawesome.com/d499a08083.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+
+</body>
+</html>

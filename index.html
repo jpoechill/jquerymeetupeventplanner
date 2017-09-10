@@ -164,58 +164,51 @@
       </div>
       <div class="row">
         <div class="form-group col-md-6">
-            <label for="newEventType">EVENT TYPE</label>
-            <div class="input-group" id='newEventType'>
-              <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-list-alt"></span>
-              </span>
-              <input list="newEventType" id="newEventType" type="text" class="form-control" placeholder="Socializing" data-required-error="Event type required" required>
-              <datalist id="newEventType">
-                <option value="Socializing">
-                <option value="Get-together">
-                <option value="Party">
-              </datalist>
-            </div>
-            <div class="help-block with-errors"></div>
+          <label for="newEventType">EVENT TYPE</label>
+          <div class="input-group" id='newEventType'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </span>
+            <input list="newEventType" id="newEventType" type="text" class="form-control" placeholder="Socializing" data-required-error="Event type required" required>
           </div>
-          <div class="form-group col-md-6">
-            <label for="newEventHost">EVENT HOST</label>
-            <div class="input-group" id='newEventHost'>
-              <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-user"></span>
-              </span>
-              <input list="newEventHost" id="newEventHost" type="text" class="form-control" placeholder="Cameron" data-required-error="Event host required" required>
-              <datalist id="newEventHost">
-                <option value="Cameron">
-                <option value="Walter">
-                <option value="Julia">
-                <option value="Sebastian">
-              </datalist>
-            </div>
-            <div class="help-block with-errors"></div>
-          </div>
+          <div class="help-block with-errors"></div>
         </div>
+        <div class="form-group col-md-6">
+          <label for="newEventHost">EVENT HOST</label>
+          <div class="input-group" id='newEventHost'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input list="newEventHost" id="newEventHost" type="text" class="form-control" placeholder="Cameron" data-required-error="Event host required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="startDateAndTime">START DATE & TIME</label>
+          <div class="input-group" id='startDateAndTime'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input id="startDateAndTime" type="datetime-local" class="form-control" data-required-error="Start date required" required>
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="endDateAndTime">END DATE & TIME</label>
+          <div class="input-group" id='endDateAndTime'>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+            <input type="datetime-local" id="endDateAndTime" class="form-control" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be later than first">
+          </div>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
         <div class="row">
-          <div class="form-group col-md-6">
-            <label for="startDateAndTime">START DATE & TIME</label>
-            <div class="input-group">
-              <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-              <input id="startDateAndTime" type="datetime-local" class="form-control" placeholder="01/01/10, 10:10am" data-required-error="Start date required" required>
-            </div>
-            <div class="help-block with-errors"></div>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="endDateAndTime">END DATE & TIME</label>
-            <div class="input-group">
-              <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-              </span>
-              <input type="datetime-local" id="endDateAndTime" class="form-control" placeholder="01/01/10, 10:09am" required data-required-error="End date required" data-datechecker="datechecker" data-datechecker-error="Second date must be higher than first">
-            </div>
-            <div class="help-block with-errors"></div>
-          </div>
+
+
         </div>
       </div>
       <div class="col-md-6">
@@ -353,10 +346,9 @@ function geolocate() {
 
 <!-- JS Scripts -->
 <script src="dist/scripts/scripts.min.js"></script>
-<!-- <script src="js/scripts.js"></script> -->
 
 <!-- Styles CSS -->
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="dist/css/bundle.min.css">
 
 <!-- Google Maps Autocomplete for Addresses API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX2cIk_Xoffcw9iIdzxPtqe4vGKsfI-mE&libraries=places&callback=initAutocomplete" async defer></script>
